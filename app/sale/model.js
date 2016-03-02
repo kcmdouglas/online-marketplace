@@ -5,5 +5,5 @@ export default DS.Model.extend({
     description: DS.attr(),
     image: DS.attr(),
     discount: DS.attr(),
-    products: DS.hasMany('product', {async: true})
+    subCategory: DS.belongsTo('sub-category', {async: true})
 });
