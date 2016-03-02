@@ -1,0 +1,6 @@
+<li {{action "showSubCategories"}}>{{#link-to "category" category.id}}{{category.name}}{{/link-to}}</li>
+{{#if showSubCategories}}
+    {{#each category.subCategories as |subCategory|}}
+      {{#link-to "sub-category" subCategory.id}}{{subCategory.name}}{{/link-to}}
+    {{/each}}
+{{/if}}

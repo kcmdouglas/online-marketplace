@@ -1,0 +1,21 @@
+<div id="wrapper">
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav nav nav-pills nav-stacked">
+          <h3>Categories</h3>
+          {{#each model as |category|}}
+            {{sidebar-category-tile category=category class="sidebar-category-tile" reload="reload"}}
+          {{/each}}
+        </ul>
+    </div>
+    <div id="page-content-wrapper">
+        <div class="page-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        {{outlet}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

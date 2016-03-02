@@ -1,5 +1,10 @@
-<div class="sales-tile">
-  {{sale.name}}
-  {{sale.description}}
-  <img src={{sale.image}} alt={{sale.name}}/>
-</div>
+{{#link-to "sale" sale.id}}
+  <div class="sales-tile col-md-4" style="background-image: url({{sale.image}})">
+    <div class="sale-name">
+      {{sale.name}}
+    </div>
+    <div class="sale-description">
+      {{sale.description}}
+    </div>
+  </div>
+{{/link-to}}

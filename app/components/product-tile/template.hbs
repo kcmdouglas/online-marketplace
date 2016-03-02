@@ -1,7 +1,6 @@
-<div class="product-tile">
+<div class="product-tile col-md-4" style="background-image:url({{product.image}})">
   {{product.name}}
-  {{product.brand}}
+  {{product.brand.name}}
   {{product.price}}
-  <img src={{product.images}} alt={{product.name}} />
   {{product.category}}
 </div>
