@@ -1,0 +1,15 @@
+<button {{action 'showProductForm'}} class="btn btn-default"></button>
+<button {{action 'showCategoryForm'}} class="btn btn-default"></button>
+<button {{action 'showSubCategoryForm'}} class="btn btn-default"></button>
+<button {{action 'showSaleForm'}} class="btn btn-default"></button>
+{{#if showProductForm}}
+  <form>
+    <label for="productName">Name</label>
+    {{input value=productName class="form-control"}}
+    <label for="productBrand">Brand</label>
+    {{input value=productBrand class="form-control"}}
+    <label for="productPrice">Price</label>
+    {{input value=productPrice class="form-control"}}
+    <label for="productImage">Image</label>
+    {{input value=productImage class="form-control"}}
+  </form>
