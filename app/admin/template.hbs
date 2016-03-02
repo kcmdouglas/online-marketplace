@@ -1,15 +1,114 @@
-<button {{action 'showProductForm'}} class="btn btn-default"></button>
-<button {{action 'showCategoryForm'}} class="btn btn-default"></button>
-<button {{action 'showSubCategoryForm'}} class="btn btn-default"></button>
-<button {{action 'showSaleForm'}} class="btn btn-default"></button>
 {{#if showProductForm}}
+  <button {{action 'hideProductForm'}} class="btn btn-default">Create Product</button>
+{{else}}
+  <button {{action 'showProductForm'}} class="btn btn-default">Create Product</button>
+{{/if}}
+
+{{#if showCategoryForm}}
+  <button {{action 'hideCategoryForm'}} class="btn btn-default">Create Category</button>
+{{else}}
+  <button {{action 'showCategoryForm'}} class="btn btn-default">Create Category</button>
+{{/if}}
+
+{{#if showSubCategoryForm}}
+  <button {{action 'hideSubCategoryForm'}} class="btn btn-default">Create Sub Category</button>
+{{else}}
+  <button {{action 'showSubCategoryForm'}} class="btn btn-default">Create Sub Category</button>
+{{/if}}
+
+{{#if showSaleForm}}
+  <button {{action 'hideSaleForm'}} class="btn btn-default">Create Sale</button>
+{{else}}
+  <button {{action 'showSaleForm'}} class="btn btn-default">Create Sale</button>
+{{/if}}
+
+{{#if showBrandForm}}
+  <button {{action 'hideBrandForm'}} class="btn btn-default">Create Brand</button>
+{{else}}
+  <button {{action 'showBrandForm'}} class="btn btn-default">Create Brand</button>
+{{/if}}
+
+{{#if showProductForm}}
+  <h3>New Product</h3>
   <form>
     <label for="productName">Name</label>
     {{input value=productName class="form-control"}}
     <label for="productBrand">Brand</label>
-    {{input value=productBrand class="form-control"}}
+    {{#x-select class="form-control"}}
+      {{#each model.brands as |brand|}}
+        {{#x-option value=brand}}{{brand.name}}{{/x-option}}
+      {{/each}}
+    {{/x-select}}
+    <label form="productCategory">Category</label>
+    {{#x-select class="form-control"}}
+      {{#each model.categories as |category|}}
+        {{#x-option value=category}}{{category.name}}{{/x-option}}
+      {{/each}}
+    {{/x-select}}
+    <label form="productSubCategory">Sub-Category</label>
+    {{#x-select class="form-control"}}
+      {{#each model.categories as |subCategory|}}
+        {{#x-option value=subCategory}}{{subCategory.name}}{{/x-option}}
+      {{/each}}
+    {{/x-select}}
     <label for="productPrice">Price</label>
     {{input value=productPrice class="form-control"}}
     <label for="productImage">Image</label>
     {{input value=productImage class="form-control"}}
+    <button {{action "createProduct"}}>Create Product</button>
   </form>
+{{/if}}
+
+{{#if showCategoryForm}}
+  <h3>New Category</h3>
+  <form>
+    <label for="categoryName">Name</label>
+    {{input class="form-control" value=categoryName}}
+    <button {{action "createCategory"}}>Create Category</button>
+  </form>
+{{/if}}
+
+{{#if showSubCategoryForm}}
+  <h3>New Sub-Category</h3>
+  <form>
+    <label for="subCategoryName">Name</label>
+    {{input class="form-control" value=subCategoryName}}
+    <label for="subCategoryCategory">Belongs To</label>
+    {{#x-select class="form-control"}}
+      {{#each model.categories as |category|}}
+        {{#x-option value=category}}{{category.name}}{{/x-option}}
+      {{/each}}
+    {{/x-select}}
+    <button {{action "createSubCategory"}}>Create Sub Category</button>
+  </form>
+{{/if}}
+
+{{#if showSaleForm}}
+  <h3>New Sale</h3>
+  <form>
+    <label for="saleName">Name</label>
+    {{input value=saleName class="form-control"}}
+    <label for="saleDescription">description</label>
+    {{input value=saleDescription class="form-control"}}
+    <label for="saleImage">Image</label>
+    {{input value=saleImage class="form-control"}}
+    <label for="saleDiscount">Discount</label>
+    {{input value=saleDiscount class="form-control"}}
+    <label for="saleProducts">Products Category</label>
+    {{#x-select class="form-control"}}
+      {{#each model.subCategories as |subCategory|}}
+        {{#x-option value=subCategory}}{{subCategory.name}}{{/x-option}}
+      {{/each}}
+    {{/x-select}}
+    <button {{action "createSale"}}>Create Sale</button>
+  </form>
+{{/if}}
+
+{{#if showBrandForm}}
+  <h3>New Brand</h3>
+  <form>
+    <label for="brandName">Name</label>
+    {{input value=brandName class="form-control"}}
+    <button {{action "createBrand"}}></button>
+  </form>
+{{/if}}
