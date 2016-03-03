@@ -1,7 +1,11 @@
 <div class="container">
-{{#each model.subCategories as |subCategory|}}
-  {{#each subCategory.products as |product|}}
-      {{product-tile product=product}}
+  <ul class="breadcrumb">
+    <li>{{#link-to "index"}}Home{{/link-to}}</li>
+    <li class="active">{{model.name}}</li>
+  </ul>
+  {{#each model.subCategories as |subCategory|}}
+    {{#each subCategory.products as |product|}}
+        {{product-tile product=product}}
+    {{/each}}
   {{/each}}
-{{/each}}
 </div>

@@ -71,14 +71,14 @@ export default Ember.Component.extend({
         subCategory: this.get('currentSubCategory'),
         price: this.get('productPrice'),
         image: this.get('productImage')
-      }
+      };
       this.sendAction("createProduct", params);
     },
 
     createCategory() {
       var params = {
         name: this.get('categoryName'),
-      }
+      };
       this.sendAction("createCategory", params);
     },
 
@@ -86,7 +86,7 @@ export default Ember.Component.extend({
       var params = {
         name: this.get('subCategoryName'),
         category: this.get('currentCategory'),
-      }
+      };
       this.sendAction("createSubCategory", params);
     },
 
@@ -97,15 +97,15 @@ export default Ember.Component.extend({
         image: this.get('saleImage'),
         discount: this.get('saleDiscount'),
         subCategory: this.get('currentSubCategory')
-      }
-      this.sendAction("createSale", params)
+      };
+      this.sendAction("createSale", params);
     },
 
     createBrand() {
       var params = {
         name: this.get('brandName'),
-      }
-      this.sendAction("createBrand", params)
+      };
+      this.sendAction("createBrand", params);
     }
 
   }

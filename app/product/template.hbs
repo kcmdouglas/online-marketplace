@@ -1,1 +1,17 @@
-{{outlet}}
+<ul class="breadcrumb">
+  <li>{{#link-to "index"}}Home{{/link-to}}</li>
+  <li>{{#link-to "category" model.subCategory.category.id}}{{model.subCategory.category.name}}{{/link-to}}</li>
+  <li>{{#link-to "sub-category" model.subCategory.id}}{{model.subCategory.name}}{{/link-to}}</li>
+</ul>
+<div class="product-header">
+  <h1>{{model.name}}</h1>
+</div>
+<div class="product-image">
+  <img src="{{model.image}}" alt="{{model.name}}" />
+</div>
+<div class="product-description">
+  <p>{{model.description}}</p>
+</div>
+<div class="product-price">
+  {{model.price}}
+</div>

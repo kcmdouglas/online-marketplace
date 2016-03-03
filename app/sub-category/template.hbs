@@ -1,3 +1,8 @@
+<ul class="breadcrumb">
+  <li>{{#link-to "index"}}Home{{/link-to}}</li>
+  <li>{{#link-to "category" model.category.id}}{{model.category.name}}{{/link-to}}</li>
+  <li class="active">{{model.name}}</li>
+</ul>
 {{#each model.products as |product|}}
   {{product-tile product=product}}
 {{/each}}
