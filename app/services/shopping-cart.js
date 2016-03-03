@@ -1,13 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Service.extend({
-  cart: [],
+  cart: {},
 
-  add(item) {
-    this.get('cart').pushObject(item);
+  add(item, quantity) {
+    this.get('cart')[item.id] = {item: item, quantity: quantity};
   },
 
   remove(item) {
-    this.get('cart').removeObject(item);
+    delete this.get('cart')[item];
   }
 });
