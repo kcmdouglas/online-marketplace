@@ -146,5 +146,16 @@
   margin: 0;
   padding: 0;
   border: none;
+}
 
+.checkout-bar {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  font-size: 3em;
+  background-color: rgba(0,0,0,0.1);
+  .checkout-total {
+    text-align: right;
+    padding: 10px;
+  }
 }

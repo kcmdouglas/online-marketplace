@@ -1,6 +1,30 @@
-{{#each shoppingCart.cart as |product|}}
-  {{cart-tile product=product}}
-{{/each}}
-<div class="cartTotal">
-  {{cart-total shoppingCart.cart}}
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Product Name</th>
+      <th>Category</th>
+      <th>Sub-Category</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each shoppingCart.cart as |product|}}
+      <tr>
+        <td><button type="button" name="button" {{action "removeFromCart" product}}><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button></td>
+        <td>{{product.name}}</td>
+        <td>{{product.subCategory.category.name}}</td>
+        <td>{{product.subCategory.name}}</td>
+        <td>${{product.price}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+<div class="row">
+  <div class="checkout-bar col-md-12">
+    <div class="checkout-total">
+      Total: ${{cart-total shoppingCart.cart}}
+      <button {{action "showCheckoutForm"}} class="btn btn-success btn-lg">Checkout</button>
+    </div>
+  </div>
 </div>
