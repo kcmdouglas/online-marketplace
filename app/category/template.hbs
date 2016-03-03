@@ -1,5 +1,7 @@
+<div class="container">
 {{#each model.subCategories as |subCategory|}}
   {{#each subCategory.products as |product|}}
-    {{product-tile product=product}}
+      {{product-tile product=product}}
   {{/each}}
 {{/each}}
+</div>

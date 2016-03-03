@@ -13,6 +13,8 @@ Router.map(function() {
   this.route('admin');
   this.route('side-bar');
   this.route('sales');
+  this.route('sign-up');
+  this.route('sign-in');
 });
 
 export default Router;
