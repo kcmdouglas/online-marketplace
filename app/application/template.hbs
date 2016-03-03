@@ -15,6 +15,12 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li>{{#link-to "sales"}}Sales{{/link-to}}</li>
+        {{#if session.isAuthenticated}}
+        <li><button class="btn btn-default navbar-btn" {{action 'signOut'}}>{{fa-icon 'sign-out'}} Sign Out</button></li>
+        {{else}}
+          <li>{{#link-to 'sign-up' class='list-group-item'}}Sign Up{{/link-to}}</li>
+          <li>{{#link-to 'sign-in' class='list-group-item'}}Sign In{{/link-to}}</li>
+        {{/if}}
       </ul>
     </div>
   </div>
