@@ -9,6 +9,8 @@
   <form>
     <label for="productName">Name</label>
     {{input value=productName class="form-control"}}
+    <label for="productDescription">Description</label>
+    {{input value=productDescription class="form-control"}}
     <label for="productBrand">Brand</label>
     {{#x-select class="form-control" action="setCurrentBrand"}}
       {{#x-option disabled="true" selected="true"}}Select a Brand{{/x-option}}
@@ -26,12 +28,16 @@
     <label form="productSubCategory">Sub-Category</label>
     {{#x-select class="form-control" action="setCurrentSubCategory"}}
       {{#x-option disabled="true" selected="true"}}Select a Sub-Category{{/x-option}}
-      {{#each subCategories as |subCategory|}}
+      {{#each currentCategory.subCategories as |subCategory|}}
         {{#x-option value=subCategory}}{{subCategory.name}}{{/x-option}}
       {{/each}}
     {{/x-select}}
     <label for="productPrice">Price</label>
-    {{input value=productPrice class="form-control"}}
+    <div class="input-group">
+      <div class="input-group-addon">$</div>
+      {{input type="number" value=productPrice class="form-control"}}
+      <div class="input-group-addon">.99</div>
+    </div>
     <label for="productImage">Image</label>
     {{input value=productImage class="form-control"}}
     <button {{action "createProduct"}} class="btn btn-success btn-block">Create Product</button>

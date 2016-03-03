@@ -15,6 +15,7 @@ Router.map(function() {
   this.route('sales');
   this.route('sign-up');
   this.route('sign-in');
+  this.route('cart');
 });
 
 export default Router;

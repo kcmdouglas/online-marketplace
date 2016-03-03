@@ -66,6 +66,7 @@ export default Ember.Component.extend({
     createProduct() {
       var params = {
         name: this.get('productName'),
+        description: this.get('productDescription'),
         brand: this.get('currentBrand'),
         category: this.get('currentCategory'),
         subCategory: this.get('currentSubCategory'),

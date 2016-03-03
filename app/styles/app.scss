@@ -4,7 +4,7 @@
 }
 
 .navbar-brand {
-  font-size: 2em;  
+  font-size: 2em;
 }
 
 .profile-pic {
@@ -14,7 +14,6 @@
 }
 
 .product-tile {
-  margin-top: 10px;
   color: white !important;
   background-color: #ddd;
   height: 300px;
@@ -131,7 +130,21 @@
 
 }
 
-.navbar {
-  background-color: #eee;
-  margin-bottom: 0;
+.navbar-nav {
+  li {
+    a {
+      background: none;
+      border: none;
+    }
+    #shopping-cart-button {
+      margin: 0 auto;
+    }
+  }
+}
+
+.product-tile-button {
+  margin: 0;
+  padding: 0;
+  border: none;
+
 }

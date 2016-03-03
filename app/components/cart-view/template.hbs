@@ -1,0 +1,6 @@
+{{#each shoppingCart.cart as |product|}}
+  {{cart-tile product=product}}
+{{/each}}
+<div class="cartTotal">
+  {{cart-total shoppingCart.cart}}
+</div>

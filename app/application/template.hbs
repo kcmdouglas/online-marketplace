@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">IDEA</a>
+      {{#link-to "index" class="navbar-brand"}}IDEA{{/link-to}}
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -22,6 +22,11 @@
           <li>{{#link-to 'sign-up' class='list-group-item'}}Sign Up{{/link-to}}</li>
           <li>{{#link-to 'sign-in' class='list-group-item'}}Sign In{{/link-to}}</li>
         {{/if}}
+        <li>
+          {{#link-to "cart" id="shopping-cart-button" class="btn btn-default navbar-btn fa fa-shopping-cart fa-2x"}}
+            {{shoppingCart.cart.length}}
+          {{/link-to}}
+        </li>
       </ul>
     </div>
   </div>
