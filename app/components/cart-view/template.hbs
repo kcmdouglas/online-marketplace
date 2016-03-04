@@ -13,12 +13,14 @@
     {{#if refresh}}
       {{#each-in shoppingCart.cart as |key value|}}
         <tr>
-          <td><button type="button" name="button" {{action "removeFromCart" value.item}}><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button></td>
-          <td>{{value.item.name}}</td>
-          <td>{{value.item.subCategory.category.name}}</td>
-          <td>{{value.item.subCategory.name}}</td>
-          <td>{{value.quantity}}</td>
-          <td>${{value.item.price}}</td>
+          {{#if value.item}}
+            <td><button type="button" name="button" {{action "removeFromCart" value.item}}><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button></td>
+            <td>{{value.item.name}}</td>
+            <td>{{value.item.subCategory.category.name}}</td>
+            <td>{{value.item.subCategory.name}}</td>
+            <td>{{value.quantity}}</td>
+            <td>${{value.item.price}}</td>
+          {{/if}}
         </tr>
       {{/each-in}}
     {{/if}}

@@ -5,8 +5,7 @@ export default Ember.Component.extend({
   shoppingCart: Ember.inject.service(),
   actions: {
     removeFromCart(product) {
-      console.log(product.id);
-      this.get('shoppingCart').remove(product.id);
+      this.get('shoppingCart').remove(product);
       this.set('refresh', false);
       var that = this;
       Ember.run.next(function() {
